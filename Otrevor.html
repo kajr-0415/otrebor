@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kyle's Research Tabs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d0d1f;
+      --card-bg: #1e1e3f;
+      --neon-pink: #ff6ec7;
+      --neon-blue: #57d9ff;
+      --neon-green: #b6ff8e;
+      --glow-yellow: #fdfd96;
+      --text-color: #f2f2f2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px var(--neon-pink);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 2px solid var(--neon-blue);
+      color: var(--neon-blue);
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--neon-blue);
+      transition: 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--neon-blue);
+      color: var(--bg-color);
+      box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+    }
+
+    .tab-content {
+      display: none;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px var(--neon-green);
+      transition: all 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--glow-yellow);
+      text-shadow: 0 0 10px var(--glow-yellow);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="image-header">
+<img src="Headerboard.png" alt="Header Banner" style="width: 100%; height: auto;" />
+    <h1>Kyle Roberto</h1>
+    <p>✨ Student | Researcher | Lifelong Learner ✨</p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="research">🔬 Research</button>
+    <button class="tab-btn" data-tab="cv">📄 CV</button>
+    <button class="tab-btn" data-tab="about">🌸 About</button>
+  </div>
+
+  <div id="research" class="tab-content active">
+    <h2>Research Project</h2>
+    <p><strong>Geometric Investigation of Quasicrystals: Analyzing Diffraction Patterns with de Bruijn's Multigrid Lattices</strong></p>
+    <ul>
+      <li>Focus: Quasicrystals, Geometry, Optimization</li>
+      <li>Applications: Insulation, Material Synthesis, Nanotechnology</li>
+      <li>Methodology: Mathematical Modeling, Geometric Tessellations</li>
+    </ul>
+
+  <a href="https://example.com/fullsize-image.jpg" target="_blank">
+    <img src="your-thumbnail.jpg" alt="Preview of my research figure" />
+    <div class="caption">📘 Click to view full image</div>
+  </a>
+
+</script>
+
+  </div>
+
+  <div id="cv" class="tab-content">
+    <h2>Curriculum Vitae</h2>
+    <p><strong>Education:</strong> Senior High School, 11 – Aristotle, STEM Track</p>
+    <ul>
+      <li>Relevant Subjects: Chemistry, Biology, Research, Statistics</li>
+      <li>Awards: Best in Science Research, Top Academic Performer</li>
+      <li>Affiliations: Science Club, Junior Research Council</li>
+    </ul>
+  </div>
+
+  <div id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p>Hello! I'm Kyle, a passionate student deeply fascinated by science, research, and the beautiful complexity of nature and math. I believe that creativity and knowledge go hand in hand, and I'm always exploring new ways to make ideas come alive through discovery.</p>
+    <p>Hobbies: Journaling, Reading Sci-Fi, Coding ✨</p>
+  </div>
+
+  <footer>
+    © 2025 Kyle Roberto. Designed with glow and love 🌈
+  </footer>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-tab');
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
